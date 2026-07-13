@@ -11,6 +11,7 @@ int jj(){
 }
 */
 
+/*
 float arr_average(int arr[], int size){
     int sum=0;
     for(int i=0;i<size;i++){
@@ -18,17 +19,40 @@ float arr_average(int arr[], int size){
     }
     return (float)sum/size;
 }
+*/
+
+int arr_max(int *arr,int size){
+    int max=arr[0];
+    for(int i=1;i<size;i++){
+        if(arr[i]>max){
+            max=arr[i];
+        }
+    }
+    return max;
+}  
+
+int arr_min(int *arr,int size){
+    int min=arr[0];
+    for(int i=1;i<size;i++){
+        if(arr[i]<min){
+            min=arr[i];
+        }
+    }
+    return min;
+}
 
 int main(){
     int n;
-    printf("Enter the number of elements in the array: ");
-    scanf("%d", &n);
+    printf("Enter the size of the array: ");
+    scanf("%d",&n);
     int arr[n];
     printf("Enter the elements of the array: ");
     for(int i=0;i<n;i++){
         scanf("%d", &arr[i]);
     }
-    float average=arr_average(arr, n);
-    printf("The average of the array is: %.2f\n", average);
+    int maximum=arr_max(arr, n);
+    int minimum=arr_min(arr, n);
+    printf("The maximum element in the array is: %d\n", maximum);
+    printf("The minimum element in the array is: %d\n", minimum);
     return 0;
 }
