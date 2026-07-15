@@ -19,11 +19,23 @@ int main(void){
         {"Bob", 21, 78.5},
         {"Charlie", 20, 88.0}
     };
+/*
     for(int i=0;i<3;i++){
         printf("Student %d:\n", i+1);
         printf("Name: %s\n", students[i].name);
         printf("Age: %d\n", students[i].age);
         printf("Score: %.2f\n", students[i].score);
     }
+*/
+    FILE*fp=fopen("students.txt","w");
+    if(fp==NULL){
+        printf("Error opening file!\n");
+        return 1;
+    }
+    for(int i=0;i<3;i++){
+        fprintf(fp,"%s %d %.2f\n", students[i].name, students[i].age, students[i].score);
+    }
+    printf("Data written to file successfully.\n");
+    fclose(fp);
     return 0;
 }
