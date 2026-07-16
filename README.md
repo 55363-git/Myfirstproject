@@ -15,4 +15,5 @@
 gcc main.c -o main
 ./main
 
-泪痕DY
+## 作者
+泪痕DY - 大一暑假
